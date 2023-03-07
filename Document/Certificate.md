@@ -17,11 +17,11 @@ iOSアプリにおける証明(署名)とは、iOSが信頼できるアプリし
 
 秘密鍵・公開鍵とは。。。？
 
-<img src="./Images/description1.png" width="100%" >
+<img src="./Images/description1.png" width="90%" >
 
 公開鍵暗号方式によって、証明書を開発者本人が使用しているかを特定することができます。
 
-<img src="./Images/description2.png" width="100%" >
+<img src="./Images/description2.png" width="90%" >
 
 iOSアプリにおいては以下のように検証されます。
 
@@ -37,7 +37,7 @@ iOSアプリにおいては以下のように検証されます。
 
 **ハッシュ値が一致した** → 開発者が署名してからアプリが改変されていない(アプリの内容が変更された場合はハッシュ値が変わって一致しなくなるため)
 
-<img src="./Images/description3.png" width="100%" >
+<img src="./Images/description3.png" width="90%" >
 
 ### 2.CSR(証明書署名要求)の送付
 
@@ -47,7 +47,7 @@ CSRは証明書署名リクエストであり、公開鍵に開発者情報な�
 
 ※ CSRは作成時に公開鍵と秘密鍵のペアが生成され、公開鍵はSCRに含まれ、秘密鍵はローカルマシンに保存されます。
 
-<img src="./Images/description4.png" width="100%" >
+<img src="./Images/description4.png" width="90%" >
 
 #### CSR作成方法
 
@@ -81,7 +81,7 @@ pending...
 
 証明書を作成してローカルマシンに取り込むと、キーチェーンアクセス上で証明書(に含まれている公開鍵)と秘密鍵が紐づきます。(証明書しか表示されない場合はCSRを作成したローカルマシンと証明書を取り込んだローカルマシンが一致していない可能性があります)
 
-<img src="./Images/description9.png" width="100%" >
+<img src="./Images/description9.png" width="90%" >
 
 ### 寄り道 (Signing Identity)
 
@@ -91,7 +91,7 @@ pending...
 
 例えば、新しいマシンに買い替えた時は、新しいマシン側に秘密鍵がないため署名することができず、実機ビルドやアプリリリースをすることができません。こうした場合に、古いマシンからp12ファイルを新しいマシンに渡すことで新しいマシンで署名を行うことが可能になります。
 
-<img src="./Images/description10.png" width="100%" >
+<img src="./Images/description10.png" width="90%" >
 
 ### 5.AppID登録
 
@@ -109,7 +109,7 @@ pending...
 2. プロビジョニングプロファイルに含まれるAppIDがアプリのBundleIDと一致しているかどうか
 3. プロビジョニングプロファイルに含まれるDeviceIDのリストにアプリを実行しようとしている端末デバイスIDが含まれているかどうか
 
-<img src="./Images/description11.png" width="75%" >
+<img src="./Images/description11.png" width="65%" >
 
 ### 8.プロビジョニングプロファイル登録(ローカル)
 

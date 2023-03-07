@@ -71,7 +71,7 @@ iOSはまずAppleの署名を検証することで、公開鍵が証明書に書
 
 → **信頼できる公開鍵をiOSに提供することができる**
 
-<img src="./Images/description8.png" width="100%" >
+<img src="./Images/description8.png" width="90%" >
 
 #### Certificate作成方法
 

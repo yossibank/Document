@@ -95,9 +95,50 @@ pending...
 
 ### 5.AppID登録
 
+AppIDはアプリケーションを識別するための固有のIDになります。
 
+<img src="./Images/description11.png" width="65%" >
+
+#### AppID作成方法
+
+* Identifiers → ＋マーク → Register a new identifier「App IDs」→ Selecte a type「App」選択
+
+<img src="./Images/description12.png" width="90%" >
+
+**Description** → AppIDの名前
+
+**App ID Prefix** → AppIDの接頭辞でTeamIDが割り当てられる
+
+**Bundle ID**
+
+1. Explicit → アプリケーションのBundleIDと完全一致の値を入力する
+2. Wildcard → アプリケーションのBundleIDと完全一致させる必要はなく、ワイルドカード(*)を使用できる
+
+ここでアプリケーション内で事前に使用する機能についても、Capabilitesに含める必要があります。
+
+<img src="./Images/description13.png" width="90%" >
+
+※ **BundleID**でWildcardを選択した場合はCapabilitiesを設定できません。そのためPUSH通知などの機能を含めたい場合はExplicitで設定する必要があります。
 
 ### 6.Device登録
+
+Device登録ではアプリをインストールする端末のUDID(Unique Device Identifier)を登録します。
+
+<img src="./Images/description14.png" width="20%" >
+
+UDIDはFinderなどの端末情報内に記載されています。
+
+<img src="./Images/description15.png" width="90%" >
+
+#### DeviceID登録方法
+
+* Devices → ＋マーク → Register a New Device情報入力
+
+<img src="./Images/description16.png" width="90%" >
+
+**Device Name** → Devicesに登録する名前
+
+**Device ID(UUID)** → 端末UDID
 
 ### 7.プロビジョニングプロファイル登録(Apple Developer)
 
@@ -109,7 +150,7 @@ pending...
 2. プロビジョニングプロファイルに含まれるAppIDがアプリのBundleIDと一致しているかどうか
 3. プロビジョニングプロファイルに含まれるDeviceIDのリストにアプリを実行しようとしている端末デバイスIDが含まれているかどうか
 
-<img src="./Images/description11.png" width="65%" >
+<img src="./Images/description17.png" width="65%" >
 
 `1.秘密鍵・公開鍵の作成`でも図で表しましたが、改めてコード署名の検証について確認してみます。
 
@@ -117,19 +158,28 @@ pending...
 
 **秘密鍵と公開鍵がペアとして一致しているかが重要です**
 
-<img src="./Images/description12.png" width="90%" >
-
+<img src="./Images/description18.png" width="90%" >
 
 ### 8.プロビジョニングプロファイル登録(ローカル)
 
+Xcodeの場合では、使用するプロビジョニングプロファイルを登録します。
+
+<img src="./Images/description19.png" width="90%" >
+
 ### 9.ビルド設定
+
+プロビジョニングプロファイル登録後はプロビジョニングファイル内の**AppID**と**BundleID**が一致しているかどうか、証明書の秘密鍵とp12内の秘密鍵がペアとして一致しているかどうかを確認し設定します。
 
 ### 10.ビルド・アーカイブ
 
+上記までが正しく設定されていれば、アプリケーションをビルド・アーカイブすることができます。
+
 ## 参考文献
 
-https://kumaskun.hatenablog.com/entry/2022/09/20/210919
+[iOSアプリのプロビジョニング周りを図にしてみる](https://qiita.com/fujisan3/items/d037e3c40a0acc46f618)
 
-https://qiita.com/maiyama18/items/88567365dde2a3b3cc92#%E3%82%B3%E3%83%BC%E3%83%89%E7%BD%B2%E5%90%8D%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9
+[iOSのコード署名がなんのためにどうやって行われているかを理解する](https://qiita.com/maiyama18/items/88567365dde2a3b3cc92#%E3%82%B3%E3%83%BC%E3%83%89%E7%BD%B2%E5%90%8D%E3%81%AE%E7%99%BB%E5%A0%B4%E4%BA%BA%E7%89%A9)
 
-https://scrapbox.io/tasuwo-ios/Xcode_%E3%81%A8%E7%BD%B2%E5%90%8D
+[iOSの証明書について](https://kumaskun.hatenablog.com/entry/2022/09/20/210919)
+
+[Xcode と署名](https://scrapbox.io/tasuwo-ios/Xcode_%E3%81%A8%E7%BD%B2%E5%90%8D)
